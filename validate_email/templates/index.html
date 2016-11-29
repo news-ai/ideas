@@ -44,6 +44,21 @@
                     <p id="emailValid"></p>
                 </div>
             </div>
+
+            <h1>Generate emails</h1>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="input-group">
+                        <input type="text" id="firstName" class="form-control" placeholder="First Name">
+                        <input type="text" id="lastName" class="form-control" placeholder="Last Name">
+                        <input type="text" id="domain" class="form-control" placeholder="Domain">
+                        <br><br>
+                        <button class="btn btn-default" id="generateEmail" type="submit">Generate</button>
+                    </div>
+                    <br>
+                    <p id="validEmail"></p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -53,6 +68,42 @@
     <script>
 
         $(document).ready(function(){
+            $('#domain').add('#lastName').add('#firstName').keypress(function(e){
+                if(e.keyCode==13)
+                $('#generateEmail').click();
+            });
+
+            $("#generateEmail").click(function(){
+                $('#emailValid').text('');
+
+                var firstName = $("#firstName").val();
+                var lastName = $("#lastName").val();
+                var domainName = $("#domain").val();
+                var data = JSON.stringify({
+                    'firstName': firstName,
+                    'lastName': lastName,
+                    'domain': domainName
+                });
+
+                console.log(data);
+
+                $.ajax({
+                    type: "POST",
+                    url: "/generate_email",
+                    data: data,
+                    success: function(response) {
+                        var text = 'None'
+                        if (response.email !== '') {
+                            text = response.email
+                        }
+                        $('#validEmail').text('Valid email: ' + text);
+                    },
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                });
+            });
+
+
             $('#validateEmailText').keypress(function(e){
                 if(e.keyCode==13)
                 $('#validateEmail').click();

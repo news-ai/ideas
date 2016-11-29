@@ -35,12 +35,50 @@ class EmailValidatorHandler(tornado.web.RequestHandler):
         self.write(response)
 
 
+class GeneralEmailHandler(tornado.web.RequestHandler):
+
+    def post(self):
+        data = tornado.escape.json_decode(self.request.body)
+
+        valid_email = ''
+        if 'firstName' in data and 'lastName' in data and 'domain' in data:
+            data['firstName'] = data['firstName'].lower()
+            data['lastName'] = data['lastName'].lower()
+            data['domain'] = data['domain'].lower()
+
+            domain_extension = data['domain']
+            if '@' not in data['domain']:
+                domain_extension = '@' + data['domain']
+
+            valid_email = ''
+
+            emails_to_test = []
+            emails_to_test.append(data['firstName'] + domain_extension)
+            emails_to_test.append(data['firstName'] + '.' + data['lastName'] + domain_extension)
+            emails_to_test.append(data['firstName'][0] + data['lastName'] + domain_extension)
+            emails_to_test.append(data['lastName'] + domain_extension)
+
+            for email in emails_to_test:
+                email_valid = check_email(email)
+                print email_valid
+                if email_valid and email_valid[0]:
+                    valid_email = email
+                    break
+
+        response = {
+            'email': valid_email
+        }
+
+        self.write(response)
+
+
 class Application(tornado.web.Application):
 
     def __init__(self):
         handlers = [
             (r"/", MainHandler),
             (r"/validate_email", EmailValidatorHandler),
+            (r"/generate_email", GeneralEmailHandler),
         ]
         settings = dict(
             cookie_secret="6fC8vlxvQWSYHz4GPfktgvTTNRA5TEI+k2hqvkAG2bI=",
