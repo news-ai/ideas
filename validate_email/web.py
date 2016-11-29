@@ -56,6 +56,7 @@ class GeneralEmailHandler(tornado.web.RequestHandler):
             emails_to_test.append(data['firstName'] + domain_extension)
             emails_to_test.append(data['firstName'] + '.' + data['lastName'] + domain_extension)
             emails_to_test.append(data['firstName'][0] + data['lastName'] + domain_extension)
+            emails_to_test.append(data['firstName'][0] + data['lastName'][0] + domain_extension)
             emails_to_test.append(data['lastName'] + domain_extension)
 
             for email in emails_to_test:
