@@ -45,7 +45,11 @@ class NYPostColumnistProfileParser(object):
         if len(email) > 0:
             email = email[0]['data-author-email']
 
-        return (twitter_username, email)
+        rss = soup.find_all(class_='author-rss')
+        if len(rss) > 0:
+            rss = rss[0]['href']
+
+        return (twitter_username, email, rss)
 
 
 class NYPostColumnistPageParser(object):
@@ -80,16 +84,19 @@ class NYPostColumnistPageParser(object):
 
         for columnist in site_content[0].find_all('a'):
             columnist_link = columnist['href']
+            columnist_name = ''
+            columnist_details = {}
 
             if len(columnist_link) > 4:
                 details = NYPostColumnistProfileParser(columnist_link)
-                print details.info
+                columnist_details = details.info
 
                 columnist_name = columnist.find_all('h3')
                 if len(columnist_name) > 0:
                     columnist_name = columnist_name[0].text
 
-                print columnist_name
+            print columnist_name
+            print columnist_details
 
         return
 

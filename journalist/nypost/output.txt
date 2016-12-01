@@ -1,0 +1,212 @@
+('', [], u'http://pagesix.com/author/cindy-adams/feed/')
+Cindy Adams
+
+(u'@claireatki', u'catkinson@nypost.com', u'http://nypost.com/author/claire-atkinson/feed/')
+Claire Atkinson
+
+(u'@bennyavni', [], u'http://nypost.com/author/benny-avni/feed/')
+Benny Avni
+
+(u'@NYPost_Berman', u'mberman@nypost.com', u'http://nypost.com/author/marc-berman/feed/')
+Marc Berman
+
+(u'@DaveBlezowNYP', u'dblezow@nypost.com', u'http://nypost.com/author/dave-blezow/feed/')
+Dave Blezow
+
+(u'@NYPost_Brazille', u'zbraziller@nypost.com', u'http://nypost.com/author/zach-braziller/feed/')
+Zach Braziller
+
+('', u'abrodsky@nypost.com', u'http://nypost.com/author/adam-brodsky/feed/')
+Adam Brodsky
+
+(u'@NYP_Brooksie', u'larry.brooks@nypost.com', u'http://nypost.com/author/larry-brooks/feed/')
+Larry Brooks
+
+(u'@scahalan', u'scahalan@nypost.com', u'http://nypost.com/author/susannah-cahalan/feed/')
+Susannah Cahalan
+
+('', u'mcallahan@nypost.com', u'http://nypost.com/author/maureen-callahan/feed/')
+Maureen Callahan
+
+(u'@MarkCannizzaro', u'mark.cannizzaro@nypost.com', u'http://nypost.com/author/mark-cannizzaro/feed/')
+Mark Cannizzaro
+
+('', [], u'http://nypost.com/author/linda-chavez/feed/')
+Linda Chavez
+
+(u'@BrianCoz', u'brian.costello@nypost.com', u'http://nypost.com/author/brian-costello/feed/')
+Brian Costello
+
+('', u'John.Crudele@nypost.com', u'http://nypost.com/author/john-crudele/feed/')
+John Crudele
+
+('', u'Cunningham@nypost.com', u'http://nypost.com/author/mark-cunningham/feed/')
+Mark Cunningham
+
+(u'@stevecuozzo', u'scuozzo@nypost.com', u'http://nypost.com/author/steve-cuozzo/feed/')
+Steve Cuozzo
+
+('', u'bcyrgalis@nypost.com', u'http://nypost.com/author/brett-cyrgalis/feed/')
+Brett Cyrgalis
+
+('', u'KDavidoff@nypost.com', u'http://nypost.com/author/ken-davidoff/feed/')
+Ken Davidoff
+
+(u'@msullivandawson', [], u'http://nypost.com/author/mackenzie-dawson/feed/')
+Mackenzie Dawson
+
+(u'@fud31', u'fudreport@aol.com', u'http://nypost.com/author/fredric-u-dicker/feed/')
+Fredric U. Dicker
+
+('', u'sfrench@nypost.com', u'http://nypost.com/author/serena-french/feed/')
+Serena French
+
+('', [], u'http://nypost.com/author/nicole-gelinas/feed/')
+Nicole Gelinas
+
+(u'@JonahNRO', [], u'http://nypost.com/author/jonah-goldberg/feed/')
+Jonah Goldberg
+
+(u'@mgoodwin_nypost', u'mgoodwin@nypost.com', u'http://nypost.com/author/michael-goodwin/feed/')
+Michael Goodwin
+
+(u'@JenGouldKeil', u'jkeil@nypost.com', u'http://nypost.com/author/jennifer-gould-keil/feed/')
+Jennifer Gould
+
+('', [], u'http://nypost.com/author/carlos-greer/feed/')
+Carlos Greer
+
+(u'@BHoffman_NYPost', u'bhoffman@nypost.com', u'http://nypost.com/author/barbara-hoffman/feed/')
+Barbara Hoffman
+
+('', [], u'http://nypost.com/author/charles-g-hogg-ii/feed/')
+Charles G. Hogg II
+
+(u'@BartHubbuch', u'BHubbuch@nypost.com', u'http://nypost.com/author/bart-hubbuch/feed/')
+Bart Hubbuch
+
+(u'@HeadlineJohnson', u'RJohnson@nypost.com', u'http://pagesix.com/author/richard-johnson/feed/')
+Richard Johnson
+
+('', [], u'http://nypost.com/author/david-kaufman/feed/')
+David Kaufman
+
+(u'@media_ink', u'KKelly@nypost.com', u'http://nypost.com/author/keith-j-kelly/feed/')
+Keith J. Kelly
+
+(u'@FredKerber', u'fkerber@nypost.com', u'http://nypost.com/author/fred-kerber/feed/')
+Fred Kerber
+
+(u'@WheresKernan', u'kkernan@nypost.com', u'http://nypost.com/author/kevin-kernan/feed/')
+Kevin Kernan
+
+('', [], u'http://nypost.com/author/george-a-king-iii/feed/')
+George A. King III
+
+(u'@HowieKussoy', [], u'http://nypost.com/author/howie-kussoy/feed/')
+Howie Kussoy
+
+(u'@NYPost_Lewis', u'blewis@nypost.com', u'http://nypost.com/author/brian-lewis/feed/')
+Brian Lewis
+
+('', [], u'http://nypost.com/author/seth-lipsky/feed/')
+Seth Lipsky
+
+('', u'dloftis@nypost.com', u'http://nypost.com/author/drew-loftis/feed/')
+Drew Loftis
+
+(u'@richlowry', [], u'http://nypost.com/author/rich-lowry/feed/')
+Rich Lowry
+
+(u'@LouLumenick', u'LLumenick@nypost.com', u'http://nypost.com/author/lou-lumenick/feed/')
+Lou Lumenick
+
+('', [], u'http://nypost.com/author/michelle-malkin/feed/')
+Michelle Malkin
+
+('', [], u'http://nypost.com/author/karol-markowicz/feed/')
+Karol Markowicz
+
+(u'@DanMartin_Post', u'dan.martin@nypost.com', u'http://nypost.com/author/dan-martin/feed/')
+Dan Martin
+
+('', [], u'http://nypost.com/author/betsy-mccaughey/feed/')
+Betsy McCaughey
+
+(u'@rlmac2', u'mcmanus@nypost.com', u'http://nypost.com/author/bob-mcmanus/feed/')
+Bob McManus
+
+('', [], u'http://nypost.com/author/andrea-morabito/feed/')
+Andrea Morabito
+
+(u'@PhilMushnick', u'phil.mushnick@nypost.com', u'http://nypost.com/author/phil-mushnick/feed/')
+Phil Mushnick
+
+('', [], u'http://nypost.com/author/johnny-oleksinski/feed/')
+Johnny Oleksinski
+
+('', [], u'http://nypost.com/author/ralph-peters/feed/')
+Ralph Peters
+
+('', u'apeyser@nypost.com', u'http://nypost.com/author/andrea-peyser/feed/')
+Andrea Peyser
+
+('', [], u'http://nypost.com/author/hardeep-phull/feed/')
+Hardeep Phull
+
+(u'@jpodhoretz', u'jpodhoretz@gmail.com', u'http://nypost.com/author/john-podhoretz/feed/')
+John Podhoretz
+
+(u'@NYPost_Mets', u'mpuma@nypost.com', u'http://nypost.com/author/mike-puma/feed/')
+Mike Puma
+
+(u'@MichaelRiedelNY', u'MRiedel@nypost.com', u'http://nypost.com/author/michael-riedel/feed/')
+Michael Riedel
+
+(u'@NaomiSRiley', [], u'http://nypost.com/author/naomi-schaefer-riley/feed/')
+Naomi Schaefer Riley
+
+(u'@MisterRorke', u'RRorke@nypost.com', u'http://nypost.com/author/robert-rorke/feed/')
+Robert Rorke
+
+(u'@NYPost_Schwartz', u'pschwartz@nypost.com', u'http://nypost.com/author/paul-schwartz/feed/')
+Paul Schwartz
+
+(u'@NYPost_Serby', u'steve.serby@nypost.com', u'http://nypost.com/author/steve-serby/feed/')
+Steve Serby
+
+(u'@Joelsherman1', u'joel.sherman@nypost.com', u'http://nypost.com/author/joel-sherman/feed/')
+Joel Sherman
+
+(u'@rkylesmith', u'KSmith@nypost.com', u'http://nypost.com/author/kyle-smith/feed/')
+Kyle Smith
+
+('', u'sperry@sperryfiles.com', u'http://nypost.com/author/paul-sperry/feed/')
+Paul Sperry
+
+(u'@StarrMSS', u'MStarr@nypost.com', u'http://nypost.com/author/michael-starr/feed/')
+Michael Starr
+
+('', u'SStewart@nypost.com', u'http://nypost.com/author/sara-stewart/feed/')
+Sara Stewart
+
+('', [], u'http://nypost.com/author/jacob-sullum/feed/')
+Jacob Sullum
+
+(u'@MikeVacc', u'michael.vaccaro@nypost.com', u'http://nypost.com/author/mike-vaccaro/feed/')
+Mike Vaccaro
+
+(u'@EVincentelli', u'evincentelli@nypost.com', u'http://nypost.com/author/elisabeth-vincentelli/feed/')
+Elisabeth Vincentelli
+
+(u'@LoisWeiss', u'LWeiss@nypost.com', u'http://nypost.com/author/lois-weiss/feed/')
+Lois Weiss
+
+('', [], u'http://nypost.com/author/george-f-will/feed/')
+George F. Will
+
+(u'@NYPost_Willis', u'gwillis@nypost.com', u'http://nypost.com/author/george-willis/feed/')
+George Willis
+
+('', u'rwilner@nypost.com', u'http://nypost.com/author/richard-wilner/feed/')
+Richard Wilner
