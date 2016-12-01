@@ -1,3 +1,7 @@
+'''
+    - https://tools.verifyemailaddress.io/Articles/Ping/How_To_Ping_Email_Address/
+'''
+
 #!/usr/bin/env python
 import tornado.escape
 import tornado.ioloop
