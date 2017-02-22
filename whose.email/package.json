@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "email-verify": "^0.1.1",
+    "express": "^4.14.1",
     "q": "^1.4.1"
   }
 }

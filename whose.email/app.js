@@ -1,3 +1,7 @@
+'use strict';
+
+var express = require('express')
+var app = express()
 var verifier = require('email-verify');
 var Q = require('q');
 
@@ -50,7 +54,7 @@ function generateEmails(firstName, lastName, domainExtension) {
     emails.push(lastName + firstName[0]) // agarwala@newsai.co
     emails.push(lastName + '.' + firstName[0]) // agarwal.a@newsai.co
     emails.push(firstName + lastName[0]) // abhia@newsai.co
-    emails.push(firstName + '.' + lastName[0]) // abhia@newsai.co
+    emails.push(firstName + '.' + lastName[0]) // abhi.a@newsai.co
 
     return emails;
 }
@@ -68,4 +72,11 @@ function tryEmails(firstName, lastName, domainExtension) {
     });
 }
 
-tryEmails('Abhi', 'Agarwal', 'newsai.co')
+app.get('/', function (req, res) {
+    tryEmails('Abhi', 'Agarwal', 'newsai.co')
+    res.send('Hello World!')
+})
+
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!')
+})
