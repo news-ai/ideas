@@ -175,6 +175,7 @@
               <button name="submit" type="submit" id="generateEmail" data-submit="...Sending">Find</button>
             </fieldset>
             <p id="validEmail"></p>
+            <p id="possibleEmails"></p>
           </div>
           <br>
         </div>
@@ -193,6 +194,7 @@
 
             $("#generateEmail").click(function(){
                 $('#emailValid').text('');
+                $('#possibleEmails').text('');
 
                 var firstName = $("#firstName").val();
                 var lastName = $("#lastName").val();
@@ -209,10 +211,15 @@
                     data: data,
                     success: function(response) {
                         var text = 'None'
-                        if (response.email !== '') {
-                            text = response.email
+                        if (response.emails.length > 0) {
+                            text = response.emails[0];
                         }
+                        console.log(response.emails);
                         $('#validEmail').text('Valid email: ' + text);
+                        if (response.emails.length > 1) {
+                          response.emails.shift();
+                          $('#possibleEmails').text('Other valid possible emails: ' + response.emails.join(', '));
+                        }
                     },
                     contentType: "application/json; charset=utf-8",
                     dataType: "json"

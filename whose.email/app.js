@@ -86,16 +86,16 @@ function tryEmails(firstName, lastName, domainExtension) {
 
 app.post('/generate_email', function (req, res) {
     tryEmails(req.body.firstName, req.body.lastName, req.body.domain).then(function (emails) {
-        var validEmail = '';
+        var validEmails = [];
         for (var i = 0; i < emails.length; i++) {
             if (emails[i] && emails[i].value && emails[i].value.success) {
-                validEmail = emails[i].value && emails[i].value.addr;
+                validEmails.push(emails[i].value && emails[i].value.addr);
             }
         }
-        res.json({'email': validEmail});
+        res.json({'emails': validEmails});
     }, function (error) {
         console.error(error);
-        res.json({'email': ''});
+        res.json({'emails': ''});
     });
 });
 
