@@ -9,10 +9,14 @@ var Q = require('q');
 
 app.use(bodyParser.json());
 
+var emailOptions = {
+    'sender': 'abhi@newsai.org'
+};
+
 function verifyEmail(email, domainExtension) {
     var deferred = Q.defer();
 
-    verifier.verify(email + domainExtension, function(err, info) {
+    verifier.verify(email + domainExtension, emailOptions, function(err, info) {
         if (err) {
             deferred.reject(new Error(err));
         } else {
@@ -90,7 +94,8 @@ app.post('/generate_email', function (req, res) {
         }
         res.json({'email': validEmail});
     }, function (error) {
-        res.send(error);
+        console.error(error);
+        res.json({'email': ''});
     });
 });
 
@@ -99,4 +104,4 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
-})
+});
