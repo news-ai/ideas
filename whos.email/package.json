@@ -1,0 +1,15 @@
+{
+  "name": "whos.email",
+  "version": "0.0.1",
+  "description": "Get/validate email paltform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "email-verify": "^0.1.1",
+    "q": "^1.4.1"
+  }
+}
