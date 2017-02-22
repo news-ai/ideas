@@ -1,9 +1,13 @@
 'use strict';
 
-var express = require('express')
-var app = express()
+var path = require('path');
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
 var verifier = require('email-verify');
 var Q = require('q');
+
+app.use(bodyParser.json());
 
 function verifyEmail(email, domainExtension) {
     var deferred = Q.defer();
@@ -60,22 +64,38 @@ function generateEmails(firstName, lastName, domainExtension) {
 }
 
 function tryEmails(firstName, lastName, domainExtension) {
+    var deferred = Q.defer();
+
     if (!domainExtension.includes('@')) {
         domainExtension = '@' + domainExtension
     }
     
     var emails = generateEmails(firstName, lastName, domainExtension);
-    verifyEmails(emails, domainExtension).then(function(content) {
-        console.log(content);
+    verifyEmails(emails, domainExtension).then(function(validEmails) {
+        deferred.resolve(validEmails);
     }, function (error) {
-        console.log(error);
+        deferred.reject(error);
     });
+
+    return deferred.promise;
 }
 
-app.get('/', function (req, res) {
-    tryEmails('Abhi', 'Agarwal', 'newsai.co')
-    res.send('Hello World!')
-})
+app.post('/generate_email', function (req, res) {
+    tryEmails(req.body.firstName, req.body.lastName, req.body.domain).then(function (emails) {
+        var validEmail = '';
+        for (var i = 0; i < emails.length; i++) {
+            if (emails[i] && emails[i].value && emails[i].value.success) {
+                validEmail = emails[i].value && emails[i].value.addr;
+            }
+        }
+        res.json({'email': validEmail});
+    }, function (error) {
+        res.send(error);
+    });
+});
+
+app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
