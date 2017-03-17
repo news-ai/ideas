@@ -103,6 +103,11 @@
             return [v, b];
         }
 
+        function checkIfEmail(text) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(text);
+        }
+
         function xw_noxfer(data, cb) {
             var worker = new Worker(XW.noxfer);
             worker.onmessage = function(e) {
@@ -217,37 +222,49 @@
             output = JSON.stringify(wb_json, 2, 2);
 
             if (out.innerText !== undefined) {
-            	var objectKets = Object.keys(wb_json);
-            	var firstSheet = wb_json[objectKets[0]];
+                var objectKets = Object.keys(wb_json);
+                var firstSheet = wb_json[objectKets[0]];
 
-            	var columns = [];
-            	var colHeaders = [];
-            	var firstSheetObjects = Object.keys(firstSheet[0]);
-            	for (var i = 0; i < firstSheetObjects.length; i++) {
-            		columns.push({
-            			data: firstSheetObjects[i],
-            			type: 'text'
-            		})
+                var columns = [];
+                var colHeaders = [];
+                var firstSheetObjects = Object.keys(firstSheet[0]);
+                for (var i = 0; i < firstSheetObjects.length; i++) {
+                    columns.push({
+                        data: firstSheetObjects[i],
+                        type: 'text'
+                    })
 
-            		colHeaders.push(firstSheetObjects[i]);
-            	}
+                    colHeaders.push(firstSheetObjects[i]);
+                }
 
-	            var hotElement = document.querySelector('#hot');
-	            var hotElementContainer = hotElement.parentNode;
-	            var hotSettings = {
-	                data: firstSheet,
-	                columns: columns,
-	                stretchH: 'all',
-	                autoWrapRow: true,
-	                rowHeaders: true,
-	                colHeaders: colHeaders
-	            };
+                var emails = [];
+                for (var i = 0; i < firstSheet.length; i++) {
+                    for (var x = 0; x < firstSheetObjects.length; x++) {
+                        var text = firstSheet[i][firstSheetObjects[x]];
+                        if (checkIfEmail(text)) {
+                            emails.push(text);
+                        }
+                    }
+                }
 
-	            var hot = new Handsontable(hotElement, hotSettings);
+                console.log(emails);
 
-        	}
+                var hotElement = document.querySelector('#hot');
+                var hotElementContainer = hotElement.parentNode;
+                var hotSettings = {
+                    data: firstSheet,
+                    columns: columns,
+                    stretchH: 'all',
+                    autoWrapRow: true,
+                    rowHeaders: true,
+                    colHeaders: colHeaders
+                };
 
-        	if (typeof console !== 'undefined') console.log("output", new Date());
+                var hot = new Handsontable(hotElement, hotSettings);
+
+            }
+
+            if (typeof console !== 'undefined') console.log("output", new Date());
         }
 
         var drop = document.getElementById('drop');
