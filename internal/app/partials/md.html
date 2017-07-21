@@ -1,0 +1,62 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New contact</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <span class="error" ng-show="myForm.input.$error.required">
+                Required!</span>
+              <span class="error" ng-show="myForm.input.$error.email">
+                Not valid email!</span>
+            <form name="contactForm" ng-submit="submit()" ng-controller="MediaDatabaseCtrl">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="email" class="form-control-label">Email:</label>
+                        <input type="email" class="form-control" id="email" ng-model="contact.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="beat" class="form-control-label">Beats:</label>
+                        <tags-input ng-model="contact.beats" id="beats"></tags-input>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasionalBeats" class="form-control-label">Occasional Beats:</label>
+                        <tags-input ng-model="contact.occasionalBeats" id="occasionalBeats"></tags-input>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasionalBeats" class="form-control-label">Is Freelancer:</label>
+                        <input ng-model="contact.isFreelancer" id="isFreelancer" type="checkbox" checked="false">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div cg-busy="{promise: loadingPromise, templateUrl: 'partials/loadingtemplate.html'}">
+    <h2>Media Database Contacts</h2>
+    <p>Total contacts: {{totalItems}}</p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      New Contact
+    </button>
+    <br><br>
+    <table class="table">
+        <tr>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Needs Update</th>
+        </tr>
+        <tr ng-repeat="contact in mdContacts.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+            <td><a ui-sref="md-contact({id: contact.email})">{{contact.email}}</a></td>
+            <td>{{contact.contactInfo.fullName}}</td>
+            <td>{{contact.toUpdate}}</td>
+        </tr>
+    </table>
+    <pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination pagination-sm" items-per-page="itemsPerPage"></pagination>
+</div>

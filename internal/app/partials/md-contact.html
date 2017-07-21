@@ -1,0 +1,18 @@
+<div cg-busy="{promise: loadingPromise, templateUrl: 'partials/loadingtemplate.html'}">
+    <div ng-if="mdContact.photos && mdContact.photos.length > 0">
+        <img height="200px" src="{{mdContact.photos[0].url}}" alt="">
+    </div>
+    <h3>Personal Details</h3><br>
+    <p>Full name: <input type="text" name="fullName" ng-model="contact.fullName"></p>
+    <p>Twitter: <input type="text" name="twitterUsername" ng-model  ="contact.twitterUsername"></p>
+    <p>Linkedin: <input type="text" name="linkedinUsername" ng-model="contact.linkedinUsername"></p>
+
+    <h3>Writing Information</h3><br>
+    <p>Beats: <tags-input ng-model="contact.beats" name="beats" id="beats"></tags-input></p>
+    <p>Occasional Beats: <tags-input ng-model="contact.occasionalBeats" name="occasionalBeats" id="occasionalBeats"></tags-input></p>
+
+    <h3>Organizations</h3><br>
+    <section ng-repeat="organization in contact.organizations" ng-if="contact.organizations && contact.organizations.length > 0">
+        <p><input type="text" name="organizationTitle" ng-model="organization.title"> at <input type="text" name="organizationName" ng-model="organization.name"> - Start Date: <input type="text" name="organizationStartDate" ng-model="organization.startDate">, End Date: <input type="text" name="organizationEndDate" ng-model="organization.endDate"></p>
+    </section>
+</div>
